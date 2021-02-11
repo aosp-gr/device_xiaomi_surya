@@ -20,6 +20,9 @@ dalvik.vm.dex2oat64.enabled=true
 persist.lcd.cabc_mode=1
 persist.lcd.hbm_mode=0
 
+# FUSE passthrough
+persist.sys.fuse.passthrough.enable=true
+
 # GMS
 ro.com.google.clientidbase=android-xiaomi
 
