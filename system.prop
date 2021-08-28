@@ -1,0 +1,22 @@
+# Audio
+ro.config.media_vol_default=8
+ro.config.media_vol_steps=25
+ro.config.vc_call_vol_default=5
+ro.config.vc_call_vol_steps=6
+
+# Bluetooth
+persist.vendor.bt.a2dp.aac_whitelist=false
+persist.vendor.btstack.enable.twsplus=true
+persist.vendor.btstack.enable.twsplussho=true
+vendor.bluetooth.soc=cherokee
+
+# Charger
+ro.charger.enable_suspend=true
+
+# Display
+persist.lcd.cabc_mode=1
+persist.lcd.hbm_mode=0
+
+# WFD
+persist.debug.wfd.enable=1
+persist.sys.wfd.virtual=0
