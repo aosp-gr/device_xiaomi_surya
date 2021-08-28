@@ -50,6 +50,7 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 
 # Device Settings
 PRODUCT_PACKAGES += \
+    XiaomiDoze \
     XiaomiParts
 
 PRODUCT_COPY_FILES += \
