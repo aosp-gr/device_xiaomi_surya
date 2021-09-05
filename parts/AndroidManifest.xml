@@ -82,6 +82,16 @@
                        android:value="com.android.settings.category.ia.sound" />
         </activity>
 
+        <activity
+            android:name=".doze.DozeSettingsActivity"
+            android:label="@string/ambient_display_title"
+            android:theme="@style/Theme.Main">
+        </activity>
+        
+        <service android:name=".doze.DozeService"
+                 android:permission="XiaomiDozeService">
+        </service>
+
         <service
             android:name=".thermal.ThermalService"
             android:permission="ThermalService">
