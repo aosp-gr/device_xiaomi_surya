@@ -8,12 +8,6 @@
         "target_path":  "device/xiaomi/J20C-sepolicy"
     },
     {
-        "repository":   "android_hardware_xiaomi",
-        "target_path":  "hardware/xiaomi",
-        "remote":       "lineage",
-        "branch":       "lineage-18.1"
-    },
-    {
         "repository":   "ghostrider-reborn/android_kernel_xiaomi_surya",
         "target_path":  "kernel/xiaomi/surya",
         "remote":       "github",
