@@ -14,6 +14,13 @@
         "branch":       "staging/LA.UM.9.x"
     },
     {
+        "repository":   "crdroidandroid/android_prebuilts_clang_host_linux-x86_clang-r433403",
+        "target_path":  "prebuilts/clang/host/linux-x86/clang-r433403",
+        "remote":       "gitlab",
+        "branch":       "11.0",
+        "clone-depth":  "1"
+    },
+    {
         "repository":   "vendor_xiaomi_surya",
         "target_path":  "vendor/xiaomi/surya"
     }
