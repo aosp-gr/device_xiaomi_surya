@@ -4,12 +4,18 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+PRODUCT_BROKEN_VERIFY_USES_LIBRARIES := true
+
 # Inherit from the proprietary configuration
 $(call inherit-product, vendor/xiaomi/surya/surya-vendor.mk)
 
 # ANT+
 PRODUCT_PACKAGES += \
     com.dsi.ant@1.0.vendor
+
+# APN
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/apns-conf.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/apns-conf.xml
 
 # Audio
 PRODUCT_COPY_FILES += \
@@ -24,7 +30,10 @@ PRODUCT_PRODUCT_PROPERTIES += \
     vendor.audio.feature.kpi_optimize.enable=false
 
 # Bluetooth
+TARGET_USE_QTI_BT_STACK := false
+
 PRODUCT_PACKAGES += \
+    android.hardware.bluetooth@1.1.vendor \
     audio.bluetooth.default \
     libbluetooth_audio_session
 
@@ -35,17 +44,25 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.btconfigstore@1.0.vendor \
     vendor.qti.hardware.btconfigstore@2.0.vendor
 
+PRODUCT_COPY_FILES += \
+    frameworks/av/services/audiopolicy/config/bluetooth_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_audio_policy_configuration.xml
+
 # Camera
 PRODUCT_PACKAGES += \
-    Snap \
+    Camera2 \
     android.hardware.camera.provider@2.4-impl \
-    android.hardware.camera.provider@2.4-service_64
+    android.hardware.camera.provider@2.4-service_64 \
+    vendor.qti.hardware.camera.device@1.0.vendor
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.flash-autofocus.xml \
     frameworks/native/data/etc/android.hardware.camera.front.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.front.xml \
     frameworks/native/data/etc/android.hardware.camera.full.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.full.xml \
     frameworks/native/data/etc/android.hardware.camera.raw.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.raw.xml
+
+# Charger
+PRODUCT_PACKAGES += \
+    charger_res_images
 
 # ContextHub
 PRODUCT_PACKAGES += \
@@ -70,9 +87,13 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     disable_configstore
 
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.surface_flinger.has_wide_color_display=false
+
 # DRM
 PRODUCT_PACKAGES += \
-    android.hardware.drm@1.3-service.clearkey
+    android.hardware.drm@1.3-service.clearkey \
+    android.hardware.drm@1.3.vendor
 
 # Filesystems table
 PRODUCT_COPY_FILES += \
@@ -127,9 +148,14 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.consumerir.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.consumerir.xml
 
-# Keyhandler
+# Kernel
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/prebuilt/Image.gz:kernel
+
+# Keymaster
 PRODUCT_PACKAGES += \
-    KeyHandler
+    android.hardware.gatekeeper@1.0.vendor \
+    android.hardware.keymaster@4.1.vendor
 
 # Keylayout
 PRODUCT_COPY_FILES += \
@@ -145,11 +171,20 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/google/interfaces \
     hardware/google/pixel
 
+# Netmgr
+PRODUCT_PACKAGES += \
+    android.system.net.netd@1.1.vendor
+
+# Neural networks
+PRODUCT_PACKAGES += \
+    android.hardware.neuralnetworks@1.3.vendor
+
 # NFC
 PRODUCT_PACKAGES += \
     NfcNci \
     SecureElement \
     Tag \
+    android.hardware.nfc@1.2.vendor \
     com.android.nfc_extras \
     libchrome.vendor
 
@@ -164,12 +199,11 @@ PRODUCT_COPY_FILES += \
 
 # Overlays
 PRODUCT_PACKAGES += \
-    WaveSuryaFrameworks \
-    WaveSuryaSettings \
     KarnaFrameworks \
     NoCutoutOverlay \
     NotchBarKiller \
     SuryaFrameworks \
+    SuryaSettings \
     SuryaSystemUI
 
 # Partitions
@@ -210,9 +244,19 @@ TARGET_COMMON_QTI_COMPONENTS := \
 
 $(call inherit-product, device/qcom/common/common.mk)
 
+# Radio
+PRODUCT_PACKAGES += \
+    android.hardware.radio@1.5.vendor \
+    android.hardware.radio.config@1.2.vendor \
+    android.hardware.radio.deprecated@1.0.vendor
+
 # Recovery
 PRODUCT_PACKAGES += \
     librecovery_updater_xiaomi
+
+# Secure element
+PRODUCT_PACKAGES += \
+    android.hardware.secure_element@1.2.vendor
 
 # Sensors
 PRODUCT_PACKAGES += \
@@ -256,6 +300,3 @@ PRODUCT_PACKAGES += \
     libnl \
     libwfdaac \
     libwfdaac_vendor
-
-PRODUCT_BOOT_JARS += \
-    WfdCommon
