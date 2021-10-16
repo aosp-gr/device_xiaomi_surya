@@ -23,8 +23,7 @@ $(call inherit-product, device/xiaomi/surya/device.mk)
 
 ifneq ($(VANILLA_BUILD),true)
 # Inherit from goolag
-BUILD_GMS := yes
-$(call inherit-product, vendor/google/gms.mk)
+$(call inherit-product, vendor/google/gms/config.mk)
 $(call inherit-product, vendor/google-pixel/config.mk)
 else
 $(warning Building vanilla)
@@ -36,3 +35,4 @@ PRODUCT_DEVICE := surya
 PRODUCT_BRAND := POCO
 PRODUCT_MODEL := POCO X3
 PRODUCT_MANUFACTURER := Xiaomi
+PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
