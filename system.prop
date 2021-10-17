@@ -30,5 +30,5 @@ ro.support_one_handed_mode=true
 persist.sys.fflag.override.settings_provider_model=false
 
 # WFD
-persist.debug.wfd.enable=0
+persist.debug.wfd.enable=1
 persist.sys.wfd.virtual=0
