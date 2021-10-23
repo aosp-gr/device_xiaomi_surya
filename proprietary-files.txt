@@ -1,4 +1,4 @@
-# Device proprietary files - from surya MIUI V12.5.1.0.RJGMIXM package, unless pinned
+# Device proprietary files - from surya MIUI V12.5.3.0.RJGMIXM package, unless pinned
 
 # ADSP - from LA.UM.9.1.r1-10900-SMxxx0.0
 vendor/bin/adsprpcd|5e246a6f5d2dca27e29b233a17e4673532191b95
@@ -583,7 +583,7 @@ vendor/lib64/libvendor.goodix.hardware.biometrics.fingerprint@2.1.so
 vendor/lib64/vendor.qti.hardware.fingerprint@1.0.so
 
 # Fingerprint - FPC
-vendor/lib64/hw/fingerprint.fpc.default.so|645bf256da2db3ce60dddab9b3282ab7241bbcb0O
+vendor/lib64/hw/fingerprint.fpc.default.so|645bf256da2db3ce60dddab9b3282ab7241bbcb0
 
 # FM - from LA.UM.9.1.r1-10900-SMxxx0.0
 vendor/lib/hw/vendor.qti.hardware.fm@1.0-impl.so|1b238f6b0494313fb217c7af55a9d4a59f982d59
