@@ -26,9 +26,6 @@ ro.com.google.clientidbase=android-xiaomi
 # One-handed mode
 ro.support_one_handed_mode=true
 
-# Settings - Dual SIM
-persist.sys.fflag.override.settings_provider_model=false
-
 # WFD
 persist.debug.wfd.enable=1
 persist.sys.wfd.virtual=0
