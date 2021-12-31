@@ -258,7 +258,8 @@ PRODUCT_PACKAGES += \
     android.hardware.radio@1.5.vendor \
     android.hardware.radio.config@1.2.vendor \
     android.hardware.radio.deprecated@1.0.vendor \
-    libavservices_minijail.vendor
+    libavservices_minijail.vendor \
+    libwpa_client
 
 # Recovery
 PRODUCT_PACKAGES += \
