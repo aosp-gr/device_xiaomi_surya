@@ -16,6 +16,10 @@ ro.charger.enable_suspend=true
 # Dalvik
 dalvik.vm.dex2oat64.enabled=true
 
+# Dexopt
+pm.dexopt.first-boot=quicken
+pm.dexopt.bg-dexopt=everything
+
 # Display
 persist.lcd.cabc_mode=1
 persist.lcd.hbm_mode=0
