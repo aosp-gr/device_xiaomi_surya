@@ -13,10 +13,6 @@ $(call inherit-product, vendor/xiaomi/surya/surya-vendor.mk)
 PRODUCT_PACKAGES += \
     com.dsi.ant@1.0.vendor
 
-# APN
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/apns-conf.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/apns-conf.xml
-
 # Audio
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/audio/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml \
