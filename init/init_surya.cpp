@@ -64,14 +64,13 @@ void set_ro_build_prop(const string &source, const string &prop,
     property_override(prop_name.c_str(), value.c_str());
 }
 
-void set_device_props(const string brand, const string device,
-        const string model, const string name, const string marketname) {
+void set_device_props(const string device, const string model,
+        const string name, const string marketname) {
     // list of partitions to override props
     string source_partitions[] = { "", "bootimage.", "odm.", "product.",
                                    "system.", "system_ext.", "vendor." };
 
     for (const string &source : source_partitions) {
-        set_ro_build_prop(source, "brand", brand, true);
         set_ro_build_prop(source, "device", device, true);
         set_ro_build_prop(source, "product", device, false);
         set_ro_build_prop(source, "model", model, true);
@@ -86,13 +85,13 @@ void vendor_load_properties()
      * Detect device and configure properties
      */
     if (GetProperty("ro.boot.hwname", "") == "karna") { // POCO X3 (India)
-        set_device_props("POCO", "karna", "M2007J20CI", "karna_in", "POCO X3");
+        set_device_props("karna", "M2007J20CI", "karna_in", "POCO X3");
     } else { // POCO X3 NFC
         string hwc = GetProperty("ro.boot.hwc", "");
         if (hwc == "THAI" || hwc == "THAI_PA") // POCO X3 NFC Thailand
-            set_device_props("POCO", "surya", "M2007J20CT", "surya_global", "POCO X3 NFC");
+            set_device_props("surya", "M2007J20CT", "surya_global", "POCO X3 NFC");
         else // POCO X3 NFC Global
-            set_device_props("POCO", "surya", "M2007J20CG", "surya_global", "POCO X3 NFC");
+            set_device_props("surya", "M2007J20CG", "surya_global", "POCO X3 NFC");
     }
 
     // Set hardware revision

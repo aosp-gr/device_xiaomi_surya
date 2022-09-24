@@ -19,10 +19,4 @@ struct __kernel_sockaddr_storage {
 				/* _SS_MAXSIZE value minus size of ss_family */
 } __attribute__ ((aligned(_K_SS_ALIGNSIZE)));	/* force desired alignment */
 
-
-struct sockaddr_storage {
-  __kernel_sa_family_t ss_family;
-  char __data[_K_SS_MAXSIZE - sizeof(unsigned short)];
-} __attribute__((aligned(_K_SS_ALIGNSIZE)));
-
 #endif /* _LINUX_SOCKET_H */

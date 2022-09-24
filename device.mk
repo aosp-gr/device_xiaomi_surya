@@ -45,7 +45,6 @@ PRODUCT_COPY_FILES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    Camera2 \
     android.hardware.camera.provider@2.4-impl \
     android.hardware.camera.provider@2.4-service_64 \
     vendor.qti.hardware.camera.device@1.0.vendor
@@ -73,6 +72,7 @@ PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD := false
 PRODUCT_DEX_PREOPT_DEFAULT_COMPILER_FILTER := everything
 PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
 USE_DEX2OAT_DEBUG := false
+DONT_DEXPREOPT_PREBUILTS := true
 
 # Device Settings
 PRODUCT_PACKAGES += \
@@ -115,7 +115,7 @@ BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := default
 $(call inherit-product-if-exists, $(LOCAL_PATH)/gps/gps_vendor_product.mk)
 
 # GSI keys
-$(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/developer_gsi_keys.mk)
 
 # Health
 PRODUCT_PACKAGES += \
@@ -141,10 +141,6 @@ PRODUCT_COPY_FILES += \
 # Input
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/input/excluded-input-devices.xml:$(TARGET_COPY_OUT_VENDOR)/etc/excluded-input-devices.xml
-
-# IORap
-PRODUCT_PRODUCT_PROPERTIES += \
-    persist.device_config.runtime_native_boot.iorap_readahead_enable=true
 
 # IR
 PRODUCT_PACKAGES += \

@@ -22,11 +22,10 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 $(call inherit-product, device/xiaomi/surya/device.mk)
 
 ifneq ($(VANILLA_BUILD),true)
-# Inherit from goolag
-$(call inherit-product, vendor/google/gms/config.mk)
-$(call inherit-product, vendor/google/pixel/config.mk)
-$(call inherit-product, vendor/gprivate/gprivate.mk)
-$(call inherit-product, vendor/partner_modules/build/mainline_modules_s_flatten_apex.mk)
+# Inherit GMS
+$(call inherit-product, vendor/partner_gms/products/gms.mk)
+$(call inherit-product-if-exists, vendor/google/pixel/config.mk)
+$(call inherit-product-if-exists, vendor/partner_modules/build/mainline_modules_t_flatten_apex.mk)
 else
 $(warning Building vanilla)
 endif
@@ -35,6 +34,9 @@ endif
 PRODUCT_NAME := aosp_surya
 PRODUCT_DEVICE := surya
 PRODUCT_BRAND := POCO
-PRODUCT_MODEL := POCO X3
+PRODUCT_MODEL := M2007J20CG
 PRODUCT_MANUFACTURER := Xiaomi
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
+
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    TARGET_PRODUCT=surya_global
