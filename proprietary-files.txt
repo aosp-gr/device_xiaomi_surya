@@ -1,4 +1,4 @@
-# Device proprietary files - from surya MIUI V12.5.4.0.RJGMIXM package, unless pinned
+# Device proprietary files - from surya MIUI V13.0.1.0.SJGMIXM package, unless pinned
 
 # ADSP - from LA.UM.9.1.r1-11500.02-SMxxx0.QSSI12.0
 vendor/bin/adsprpcd|12e09d8e87b260a8721c7938890186a0877a9e85
@@ -32,6 +32,8 @@ vendor/lib/rfsa/adsp/libhexagon_nn_skel.so
 vendor/lib/rfsa/adsp/libmialgo_rfs_cdsp_skel.so
 vendor/lib/rfsa/adsp/libscveObjectSegmentation_skel.so
 vendor/lib/rfsa/adsp/libscveT2T_skel.so
+vendor/lib/rfsa/adsp/libsnpe_dsp_v65_domains_v2_skel.so
+vendor/lib/rfsa/adsp/libsnpe_dsp_v66_domains_v2_skel.so
 vendor/lib/rfsa/adsp/libsns_device_mode_skel.so
 vendor/lib/rfsa/adsp/libsns_low_lat_stream_skel.so
 vendor/lib/rfsa/adsp/libSuperSensor_skel.so
@@ -101,6 +103,7 @@ vendor/lib64/libsndmonitor.so
 vendor/lib64/libspkrprot.so
 vendor/lib64/libssrec.so
 vendor/lib64/soundfx/libasphere.so
+vendor/lib64/soundfx/libmisoundfx.so
 vendor/lib64/soundfx/libqcompostprocbundle.so
 vendor/lib64/soundfx/libqcomvisualizer.so
 vendor/lib64/soundfx/libqcomvoiceprocessing.so
@@ -226,6 +229,7 @@ vendor/lib64/libremosaic_wrapper.so
 vendor/lib64/libsdk_sr.so
 vendor/lib64/libst_sr_models.so
 vendor/lib64/libSNPE.so
+vendor/lib64/libsnpe_dsp_domains_v2_system.so
 vendor/lib64/libSuperSensorCPU.so
 vendor/lib64/libSuperSensor.so
 vendor/lib64/libswregistrationalgo.so
@@ -331,7 +335,6 @@ vendor/etc/camera/golden_rear_dc_cal_wd.bin
 vendor/etc/camera/hdr_ui9_params.config
 vendor/etc/camera/LDC_FPC_TUNING_DATA.bin
 vendor/etc/camera/LDC_PACKDATA_VENDORID_0x01.bin
-vendor/etc/camera/libsnpe_dsp_v66_domains_v2_skel.so
 vendor/etc/camera/male_bg.png
 vendor/etc/camera/male_icon.png
 vendor/etc/camera/megviifacepp_0_5_2_model
@@ -349,8 +352,8 @@ vendor/etc/camera/watermark_font_2300_3199.dat
 vendor/firmware/CAMERA_ICP.elf
 
 # Camera provider
-vendor/lib/android.hardware.camera.provider@2.4-legacy.so
 vendor/lib64/android.hardware.camera.provider@2.4-legacy.so
+vendor/lib64/vendor.qti.hardware.camera.device@3.5.so
 
 # Camera sensors
 vendor/lib64/camera/com.qti.sensormodule.j20c_aac_gc02m1b_depth.bin
@@ -1040,6 +1043,7 @@ vendor/etc/sensors/config/sns_cm.json
 vendor/etc/sensors/config/sns_dae.json
 vendor/etc/sensors/config/sns_device_orient.json
 vendor/etc/sensors/config/sns_diag_filter.json
+vendor/etc/sensors/config/sns_direct_channel.json
 vendor/etc/sensors/config/sns_distance_bound.json
 vendor/etc/sensors/config/sns_dpc.json
 vendor/etc/sensors/config/sns_facing.json
@@ -1063,7 +1067,7 @@ vendor/etc/sensors/config/sns_wrist_pedo.json
 vendor/etc/sensors/sns_reg_config
 
 # SOTER
--app/SoterService/SoterService.apk
+-vendor/app/SoterService/SoterService.apk
 vendor/bin/hw/vendor.qti.hardware.soter@1.0-service
 vendor/etc/init/vendor.qti.hardware.soter@1.0-service.rc
 vendor/lib64/hw/vendor.qti.hardware.soter@1.0-impl.so
@@ -1105,12 +1109,11 @@ vendor/lib64/vendor.qti.hardware.tui_comm@1.0.so|938262f1c75299523dc8e5c4e6a7937
 
 # Vibrator firmware - AW8624
 vendor/firmware/aw8624_haptic.bin
-vendor/firmware/aw8624_rtp.bin
+vendor/firmware/aw8624_rtp_1.bin
 vendor/firmware/osc_rtp_24K_5s.bin
 
 # Vibrator firmware - DRV2624
 vendor/firmware/drv2624.bin
-vendor/firmware/drv2624.rtp
 
 # WLAN - from LA.UM.9.1.r1-11500.02-SMxxx0.QSSI12.0
 vendor/bin/cnss-daemon|a66bf400596682c3cb4d5cbdcdd3640333844eb1
