@@ -77,6 +77,8 @@ void set_device_props(const string device, const string model,
         set_ro_build_prop(source, "name", name, true);
         set_ro_build_prop(source, "marketname", marketname, true);
     }
+
+    property_override("bluetooth.device.default_name", marketname.c_str());
 }
 
 void vendor_load_properties()
