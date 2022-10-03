@@ -22,7 +22,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/audio/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_volumes.xml \
     $(LOCAL_PATH)/configs/audio/mixer_paths_wcd9375.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths_wcd9375.xml
 
-PRODUCT_PRODUCT_PROPERTIES += \
+PRODUCT_ODM_PROPERTIES += \
     vendor.audio.feature.kpi_optimize.enable=false
 
 # Bluetooth
@@ -92,7 +92,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     disable_configstore
 
-PRODUCT_PRODUCT_PROPERTIES += \
+PRODUCT_ODM_PROPERTIES += \
     ro.surface_flinger.has_wide_color_display=false
 
 # DRM
